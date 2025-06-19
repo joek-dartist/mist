@@ -17,12 +17,20 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   # NVIDIA specyficzne (w połączeniu z nvidia w configuration.nix)
+  {
   hardware.opengl.enable = true;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-  hardware.nvidia.open = false; # RTX 4060 to Ampere = wspiera open kernel
-  hardware.nvidia.modesetting.enable = true;
 
+  services.xserver.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    modesetting.enable = true;
+    open = false;                            # ❗ Zamknięty sterownik
+    acceptLicense = true;                   # ✅ Automatyczna akceptacja licencji
+    powerManagement.enable = false;         # (opcjonalnie) zasilanie GPU
+  };
+
 
   # Jeśli masz Wi-Fi przez kartę Intel/Realtek itp.
   hardware.enableRedistributableFirmware = true;
