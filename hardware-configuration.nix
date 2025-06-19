@@ -8,9 +8,14 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/b48bf411-70a8-44d9-b75d-26e15edef6fe";
+    device = "/dev/disk/by-uuid/1ed54239-8e4d-4f6f-a869-69e258cc5f50";
     fsType = "ext4"; # lub btrfs/xfs/zfs — zależnie od Twojego dysku
   };
+
+  fileSystems."/boot" = {
+  device = "/dev/disk/by-uuid/DE82-F39C";
+  fsType = "vfat";
+};
 
   swapDevices = [ ]; # dodaj swap jeśli chcesz
 
