@@ -18,9 +18,19 @@
   services.xserver.displayManager.startx.enable = true;
   services.xserver.windowManager.qtile.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.deviceSection = ''
+  Option "Coolbits" "28"
+'';
+  services.pipewire = {
+    enable = true;
+    audio.enable = true;
+    pulse.enable = true;
+    alsa.enable = true;
+    jack.enable = true; # (opcjonalnie dla DAW/kreatywnych setupów)
+  };
 
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  # Automatyczny menedżer sesji: WirePlumber
+  services.pipewire.wireplumber.enable = true;
 
   users.users.joek = {
     isNormalUser = true;
