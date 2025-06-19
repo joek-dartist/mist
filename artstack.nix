@@ -17,9 +17,10 @@
     # Narzędzia systemowe
     git neofetch nano unzip
     nvidia-smi nvidia-settings
-
+    pavucontrol helvum qjackctl
     # Twoje aliasy mogą działać przez `~/.bashrc`
-  ];
+    alias fogaudio="pavucontrol & helvum &"
+    ];
 
   # Utwórz katalog ~/ART na start
   system.activationScripts.createArtFolder = {
