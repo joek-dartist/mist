@@ -37,5 +37,5 @@
   hardware.firmware = [ pkgs.firmwareLinuxNonfree ];
 
   # Opcjonalnie: ustaw DPI dla Twojego monitora (ultrapanorama)
-  # services.xserver.dpi = 110;
+  services.xserver.dpi = 110;
 }
