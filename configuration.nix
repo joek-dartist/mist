@@ -14,13 +14,17 @@
   networking.useDHCP = true;
   time.timeZone = "Europe/Warsaw";
 
-  services.xserver.enable = true;
-  services.xserver.displayManager.startx.enable = true;
-  services.xserver.windowManager.qtile.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl.enable = true;
+
+  hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    open = false;
+    acceptLicense = true;
+    modesetting.enable = true;
+  };
   services.xserver.deviceSection = ''
   Option "Coolbits" "28"
-'';
+  '';
   services.pipewire = {
     enable = true;
     audio.enable = true;
