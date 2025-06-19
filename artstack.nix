@@ -16,6 +16,7 @@
 
     # Narzędzia systemowe
     git neofetch nano unzip
+    nvidia-smi nvidia-settings
 
     # Twoje aliasy mogą działać przez `~/.bashrc`
   ];
