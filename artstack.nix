@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     krita blender gimp inkscape mypaint
     dolphin alacritty rofi
-    picom kvantum qt5ct qt6ct lxappearance
+    picom kvantum qt6ct lxappearance
     ffmpeg vlc imagemagick
     git neofetch nano unzip
     nvidia-smi nvidia-settings
