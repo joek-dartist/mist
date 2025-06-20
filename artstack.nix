@@ -2,14 +2,21 @@
 
 {
   environment.systemPackages = with pkgs; [
-    krita blender gimp inkscape mypaint
-    dolphin alacritty rofi
-    picom kvantum qt6ct lxappearance
+    kdePackages.krita blender gimp inkscape mypaint
+    kdePackages.dolphin
+    alacritty rofi
+    picom kdePackages.kvantum kdePackages.kvantum-manager
+    qt6ct lxappearance
     ffmpeg vlc imagemagick
     git neofetch nano unzip
     nvidia-smi nvidia-settings
     pavucontrol helvum qjackctl
   ];
+
+  environment.variables = {
+    QT_QPA_PLATFORMTHEME = "qt6ct";
+    QT_STYLE_OVERRIDE = "kvantum";
+  };
 
   system.activationScripts.createArtFolder = {
     text = ''
