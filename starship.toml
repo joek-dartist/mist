@@ -1,0 +1,6 @@
+format = "$directory$git_branch$character"
+palette = "gruvbox_dark"
+
+[palettes.gruvbox_dark]
+blue = "#458588"
+orange = "#d79921"
